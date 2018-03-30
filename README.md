@@ -2,7 +2,7 @@
 
 Imagens do protótipo na pasta [prototipo](prototipo).
 
-Splash | Login | Feed
+Splash | Login | Registro
 :-:|:-:|:-:
 ![](/prototipo/app1.jpeg) | ![](/prototipo/app2.jpeg) | ![](/prototipo/register.jpeg) 
 
