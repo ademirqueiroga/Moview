@@ -5,7 +5,7 @@
 * Comment
 * User
 
-As entidades listadas acima serão cacheadas na aplicação para uma melhor experiência do usuário e serão atualizadas sempre que necessário.
+As entidades listadas acima serão armazenadas na aplicação para uma melhor experiência do usuário e serão atualizadas sempre que necessário.
 
 ### Internacionalização
 A internacionalização consiste de dois arquivos de resources _strings.xml_ um arquivo padrão (default) com os valores das strings em inglês e outro arquivo destinado a dispositivos configurados com a lingua portuguesa com os valores traduzidos para o português. Caso o dispositivo utilize uma linguagem diferente do PT-BR o app usará o arquivo padrão.
