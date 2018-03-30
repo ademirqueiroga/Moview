@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:showIn="@layout/activity_search"
+    android:gravity="top|center">
+
+    <com.ademir.mooview.astuetz.CustomPagerSlidingTabstrip
+        android:id="@+id/search_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/white"
+        app:pstsDividerColor="@color/light_gray"
+        app:pstsIndicatorColor="@color/colorPrimary"
+        app:pstsIndicatorHeight="2dp"
+        app:pstsShouldExpand="true"
+        app:pstsUnderlineHeight="1dp"/>
+
+    <ProgressBar
+        android:id="@+id/search_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_tabs"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/search_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/search_tabs"
+        android:visibility="visible"/>
+
+
+</RelativeLayout>

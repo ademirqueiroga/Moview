@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_marginBottom="4dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="4dp"
+    android:background="@color/white"
+    android:elevation="1dp">
+
+    <RelativeLayout
+        android:id="@+id/parent"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="?selectableItemBackground">
+
+        <ImageView
+            android:id="@+id/iv_image"
+            android:layout_width="135dp"
+            android:layout_height="200dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true" />
+
+        <RelativeLayout
+            android:id="@+id/content_container"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_alignTop="@id/iv_image"
+            android:layout_toEndOf="@+id/iv_image"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tv_rating"
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@+id/tv_rating"
+                android:layout_toStartOf="@+id/tv_rating"
+                android:ellipsize="end"
+                android:gravity="start|center"
+                android:maxLines="1"
+                android:paddingEnd="10dp"
+                android:text="Star Wars: Rogue One a Star"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:drawableEnd="@drawable/ic_star_black_24dp"
+                android:gravity="center|end"
+                android:text="7.3"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/tv_title"
+                android:layout_marginEnd="10dp"
+                android:drawablePadding="2dp"
+                android:drawableStart="@drawable/ic_calendar_gray_20dp"
+                android:gravity="center"
+                android:text="2016" />
+
+            <TextView
+                android:id="@+id/tv_categories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_year"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/tv_year"
+                android:layout_toEndOf="@id/tv_year"
+                android:ellipsize="marquee"
+                android:gravity="center|end"
+                android:maxLines="1"
+                android:text="Drama, Action, Science Fiction" />
+
+            <TextView
+                android:id="@+id/tv_overview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/tv_year"
+                android:layout_marginTop="20dp"
+                android:ellipsize="end"
+                android:maxLines="4"
+                android:text="A rogue band odsadasdasdasdas asdasdasdasdasd  asdas  dasd a f resistance fighters unite for a mission to steal the Death Star plans and bring a new hope to the galaxy." />
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/content_container"
+            android:layout_toEndOf="@+id/iv_image"
+            android:background="@color/light_gray" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_comment"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line"
+            android:layout_toEndOf="@id/iv_image"
+            android:drawablePadding="5dp"
+            android:drawableStart="@drawable/ic_comment_24dp"
+            android:text="@string/text_comment"
+            android:textColor="@color/colorPrimary" />
+
+        <ImageView
+            android:id="@+id/btn_favorite"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@id/line"
+            android:layout_below="@id/line"
+            android:adjustViewBounds="true"
+            android:scaleType="center"
+            android:src="@drawable/check_star" />
+
+        <ImageView
+            android:id="@+id/btn_watchlist"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line"
+            android:layout_toEndOf="@+id/btn_comment"
+            android:layout_toStartOf="@+id/btn_favorite"
+            android:adjustViewBounds="true"
+            android:scaleType="center"
+            app:srcCompat="@drawable/check_playlist" />
+
+        <!--<TextView-->
+        <!--android:id="@+id/tv_more"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:layout_below="@+id/line"-->
+        <!--android:layout_toEndOf="@+id/iv_image"-->
+        <!--android:background="?android:attr/selectableItemBackground"-->
+        <!--android:padding="8dp"-->
+        <!--android:drawableEnd="@drawable/ic_keyboard_arrow_right_black_24dp"-->
+        <!--android:gravity="center|start"-->
+        <!--android:textColor="@color/black"-->
+        <!--android:text="@string/text_more_info" />-->
+
+    </RelativeLayout>
+</FrameLayout>

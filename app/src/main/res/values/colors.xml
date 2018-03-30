@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">@color/mainBlue</color>
+    <color name="colorPrimaryDark">@color/mainBlue</color>
+    <color name="colorAccent">@color/yellow</color>
+    <color name="mainBlue">#242E42</color>
+    <color name="mainBlueMedium">#374866</color>
+    <color name="mainBlueLight">#54617A</color>
+    <color name="transparentBlue">#CC152647</color>
+    <color name="cardDarkBlue">#1C2433</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="yellow">#FFB800</color>
+    <color name="red">#DB4437</color>
+    <color name="redTag">#F5471D</color>
+    <color name="facebook_blue">#417DF0</color>
+    <color name="gold_badge_text">#C27F00</color>
+    <color name="silver_badge_text">#7A8485</color>
+    <color name="bronze_badge_text">#A85200</color>
+
+
+    <!--TODO REPLACE-->
+    <color name="light_gray">#E3E3E3</color>
+    <color name="dark_gray">#666666</color>
+    <color name="colorPrimarySemi">#2A3F51B5</color>
+
+    <color name="hintColor">@color/mainBlueLight</color>
+
+    <!--Transparency hex values-->
+    <!--100% — FF-->
+    <!--95% — F2-->
+    <!--90% — E6-->
+    <!--85% — D9-->
+    <!--80% — CC-->
+    <!--75% — BF-->
+    <!--70% — B3-->
+    <!--65% — A6-->
+    <!--60% — 99-->
+    <!--55% — 8C-->
+    <!--50% — 80-->
+    <!--45% — 73-->
+    <!--40% — 66-->
+    <!--35% — 59-->
+    <!--30% — 4D-->
+    <!--25% — 40-->
+    <!--20% — 33-->
+    <!--15% — 26-->
+    <!--10% — 1A-->
+    <!--5% — 0D-->
+    <!--0% — 00-->
+</resources>
