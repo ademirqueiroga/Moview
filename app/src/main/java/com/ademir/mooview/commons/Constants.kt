@@ -6,8 +6,8 @@ class Constants {
 
     object Urls {
 
-//        const val DOMAIN = "https://mooview.herokuapp.com/"
-        const val DOMAIN = "http://192.168.1.100/"
+        const val DOMAIN = "https://mooview.herokuapp.com/"
+//        const val DOMAIN = "http://192.168.1.100/"
 
         const val AUTH = DOMAIN + "auth/"
         const val SIGN_UP = DOMAIN + "signup/"

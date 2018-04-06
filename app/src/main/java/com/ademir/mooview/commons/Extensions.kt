@@ -9,7 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import com.ademir.mooview.controllers.SessionController
+import com.ademir.mooview.SessionController
 import com.ademir.moview.model.User
 import com.squareup.picasso.Picasso
 import java.util.*

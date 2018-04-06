@@ -5,14 +5,14 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".core.App"
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".SplashActivity"
+        <activity android:name=".ui.splash.SplashActivity"
             android:theme="@style/AppTheme.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,8 +26,8 @@
                 android:name="android.app.default_searchable"
                 android:value=".search.SearchActivity" />
         </activity>
-        <activity android:name=".home.MovieDetailsActivity" />
-        <activity android:name=".comments.CommentsActivity" />
+        <activity android:name=".home.CatalogActivity" />
+        <activity android:name="com.ademir.mooview.ui.comments.CommentsActivity" />
         <activity android:name=".search.SearchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
@@ -37,7 +37,7 @@
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
         </activity>
-        <activity android:name=".login.RegisterActivity"></activity>
+        <activity android:name=".login.SignUpActivity"></activity>
     </application>
 
 </manifest>

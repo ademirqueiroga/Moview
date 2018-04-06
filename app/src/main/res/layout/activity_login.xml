@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context="com.ademir.mooview.login.LoginActivity">
 
 
@@ -16,6 +17,8 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="16dp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/white"
         android:ems="10"
         android:text="admqueiroga"
         android:hint="username"
@@ -36,6 +39,8 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="16dp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/white"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="password"
@@ -67,11 +72,23 @@
         app:layout_constraintRight_toRightOf="@+id/btn_login"
         app:layout_constraintTop_toBottomOf="@+id/btn_login" />
 
+    <Button
+        android:id="@+id/btn_fb"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Login facebook"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/btn_register"
+        app:layout_constraintRight_toRightOf="@+id/btn_register"
+        app:layout_constraintTop_toBottomOf="@+id/btn_register" />
+
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="226dp"
         android:layout_height="212dp"
-        app:srcCompat="@drawable/ic_ondemand_video_black_24dp"
+        app:srcCompat="@drawable/logo"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="8dp"

@@ -47,7 +47,7 @@ dependencies {
     implementation "android.arch.lifecycle:extensions:$rootProject.ext.liveDataVersion"
 
     // RxJava
-    implementation "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxJavaVersion"
+    implementation "io.reactivex.1rxjava2:rxjava:$rootProject.ext.rxJavaVersion"
     implementation "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxAndroidVersion"
     implementation "com.jakewharton.rxbinding2:rxbinding:$rootProject.ext.rxBindingVersion"
 
