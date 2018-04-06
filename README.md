@@ -1,14 +1,15 @@
+# Deadline #1
 ### Protótipo gráfico
 
-Imagens do protótipo na pasta [prototipo](prototipo).
+Imagens do protótipo na pasta [prototipo](assets/prototipo).
 
 Splash | Login | Registro
 :-:|:-:|:-:
-![](/prototipo/app1.jpeg) | ![](/prototipo/app2.jpeg) | ![](/prototipo/register.jpeg) 
+![](/assets/prototipo/app1.jpeg) | ![](/assets/prototipo/app2.jpeg) | ![](/assets/prototipo/register.jpeg) 
 
 Feed | Buscar Categoria | Buscar Título | Meu Perfil
 :-:|:-:|:-:|:-:
-![](/prototipo/app3.jpeg) | ![](/prototipo/app4.jpeg) | ![](/prototipo/app5.jpeg) | ![](/prototipo/app6.jpeg) 
+![](/assets/prototipo/app3.jpeg) | ![](/assets/prototipo/app4.jpeg) | ![](/assets/prototipo/app5.jpeg) | ![](/assets/prototipo/app6.jpeg) 
 
 ### Crud de entidades
 * Movie
@@ -30,3 +31,12 @@ O aplicativo utilizará a API de filmes [The Movie Database](https://www.themovi
 * Reprodutor de mídia nativo
 
 O app irá utilizar o reprodutor de vídeos nativo do Android para exibir trailers dos filmes e também irá utilizar a [sdk do Facebook](https://developers.facebook.com/docs/android/) para realizar login.
+
+# Deadline #2
+### Diagrama Arquitetura de Projeto
+
+![](/assets/diagrama_arquitetura/d_arquitetura.png)
+
+### Estrutura de Projeto
+
+![](/assets/estrutura_projeto/e_projeto.png)
