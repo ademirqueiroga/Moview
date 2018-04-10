@@ -9,13 +9,15 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.ademir.mooview"
+        applicationId "com.ademir.moview"
         versionCode 1
         versionName "1.0"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "TMDB_API_KEY", '"15e1fa139021ce8ffbda7a3ca062f2fc"')
     }
 
     compileOptions {
@@ -35,13 +37,19 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 
     // Android
     implementation "com.android.support:design:$rootProject.ext.supportLibraryVersion"
     implementation "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
     implementation "com.android.support.constraint:constraint-layout:$rootProject.ext.constraintLayoutVersion"
+
+    // Firebase
+    implementation "com.firebaseui:firebase-ui-auth:$rootProject.ext.firebaseVersion"
+
+    // Facebook sdk
+    implementation "com.facebook.android:facebook-android-sdk:$rootProject.ext.facebookVersion"
 
     // LiveData
     implementation "android.arch.lifecycle:extensions:$rootProject.ext.liveDataVersion"
@@ -51,22 +59,24 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxAndroidVersion"
     implementation "com.jakewharton.rxbinding2:rxbinding:$rootProject.ext.rxBindingVersion"
 
+    // Paging
+    implementation "android.arch.paging:runtime:$rootProject.ext.pagingVersion"
+
     // Room
     implementation "android.arch.persistence.room:runtime:$rootProject.ext.roomVersion"
     implementation "com.android.support.constraint:constraint-layout:$rootProject.ext.constraintLayoutVersion"
+    implementation 'com.google.firebase:firebase-auth:11.8.0'
     kapt "android.arch.persistence.room:compiler:$rootProject.ext.roomVersion"
 
     // Retrofit & HTTP
     implementation "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.ext.retrofitVersion"
     implementation "com.squareup.retrofit2:converter-moshi:$rootProject.ext.retrofitVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.okhttpLoggingVersion"
 
     // Picasso
     implementation "com.squareup.picasso:picasso:$rootProject.ext.picassoVersion"
-
-
     implementation 'com.astuetz:pagerslidingtabstrip:1.0.1'
-
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
@@ -76,3 +86,5 @@ dependencies {
 repositories {
     mavenCentral()
 }
+
+apply plugin: 'com.google.gms.google-services'

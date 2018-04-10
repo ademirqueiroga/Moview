@@ -8,7 +8,7 @@
     tools:showIn="@layout/activity_search"
     android:gravity="top|center">
 
-    <com.ademir.mooview.ui.views.CustomPagerSlidingTabstrip
+    <com.ademir.moview.ui.views.CustomPagerSlidingTabstrip
         android:id="@+id/search_tabs"
         android:layout_width="match_parent"
         android:layout_height="48dp"

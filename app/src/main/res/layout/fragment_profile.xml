@@ -65,7 +65,7 @@
                 app:tabSelectedTextColor="@color/colorPrimary"
                 app:tabTextColor="@color/colorPrimary" />
 
-            <com.ademir.mooview.views.NonSwipeableViewPager
+            <com.ademir.moview.views.NonSwipeableViewPager
                 android:id="@+id/profile_viewpager"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />

@@ -1,17 +1,19 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.2.30'
+    ext.kotlin_version = '1.2.31'
     repositories {
         google()
         jcenter()
+        mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.android.tools.build:gradle:3.1.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+        classpath 'com.google.gms:google-services:3.1.1'
     }
 }
 
@@ -20,6 +22,19 @@ allprojects {
         google()
         jcenter()
     }
+
+    // Force all of the primary support libraries to use the same version.
+    configurations.all {
+        resolutionStrategy {
+            eachDependency { DependencyResolveDetails details ->
+                if (!details.requested.name.contains('multidex')
+                        && details.requested.group == 'com.android.support') {
+                    details.useVersion rootProject.ext.supportLibraryVersion
+                }
+            }
+        }
+    }
+
 }
 
 task clean(type: Delete) {
@@ -35,7 +50,7 @@ ext {
     buildToolsVersion = '27.0.3'
 
     // App dependencies
-    supportLibraryVersion = '27.1.0'
+    supportLibraryVersion = '27.1.1'
     constraintLayoutVersion = '1.0.2'
     picassoVersion = '2.71828'
     roomVersion = '1.0.0'
@@ -44,5 +59,8 @@ ext {
     rxAndroidVersion = '2.0.1'
     rxBindingVersion = '2.0.0'
     retrofitVersion = '2.3.0'
-
+    pagingVersion = '1.0.0-alpha6'
+    firebaseVersion = '3.2.2'
+    facebookVersion = '[4,5)'
+    okhttpLoggingVersion = '3.9.0'
 }

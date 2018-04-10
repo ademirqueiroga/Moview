@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Mooview</string>
+    <string name="app_name">Moview</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -58,5 +58,6 @@
     <string name="text_confirm_password">confirm password</string>
     <string name="text_loading">Loading…</string>
     <string name="text_feed">Feed</string>
+    <string name="text_facebook_signin">Entrar com facebook</string>
 
 </resources>
