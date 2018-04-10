@@ -20,6 +20,7 @@ import com.ademir.moview.home.fragments.CatalogFragment
 import com.ademir.moview.home.fragments.FeedFragment
 import com.ademir.moview.home.fragments.ProfileFragment
 import com.ademir.moview.login.SignInActivity
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.content_home.*
 
 class HomeActivity : AppCompatActivity() {
@@ -63,6 +64,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun logout() {
+        FirebaseAuth.getInstance().signOut()
         SessionController.clearSession(this)
         startActivity(Intent(this, SignInActivity::class.java))
         finish()
