@@ -87,7 +87,7 @@ class HomeActivity : AppCompatActivity() {
             }
         }
 
-        override fun getCount() = 1 // TODO 
+        override fun getCount() = 1 // TODO
 
     }
 

@@ -13,7 +13,7 @@ class CatalogPresenter(val view: CatalogContract.View,
     private val repoResult = movieRepository.popularMovies()
 
     val moviesPagedList = repoResult.pagedList
-    val moviesNetworkString = repoResult.networkState
+    val moviesNetworkState = repoResult.networkState
     val moviesRefreshState = repoResult.refreshState
 
     override fun refresh() {

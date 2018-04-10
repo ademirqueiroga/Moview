@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.ademir.moview.App
 import com.ademir.moview.R
+import com.ademir.moview.commons.NetworkState
 import com.ademir.moview.commons.prepare
 import com.ademir.moview.data.local.movie.MovieRepository
 import com.ademir.moview.data.remote.MoviewApi
@@ -46,6 +47,11 @@ class CatalogFragment : Fragment(), CatalogContract.View {
             moviesPagedList.observe(this@CatalogFragment, Observer {
                 adapter.submitList(it)
             })
+
+            moviesRefreshState.observe(this@CatalogFragment, Observer {
+                swipe_refresh_layout.isRefreshing = it == NetworkState.LOADING
+            })
+
         }
 
     }
