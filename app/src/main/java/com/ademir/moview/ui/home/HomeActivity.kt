@@ -73,8 +73,8 @@ class HomeActivity : AppCompatActivity() {
 
         override fun getItem(position: Int): Fragment {
             return when (position) {
-                0 -> FeedFragment()
-                1 -> CatalogFragment()
+//                0 -> FeedFragment()
+                0 -> CatalogFragment()
                 else -> ProfileFragment.newInstance(SessionController.user!!)
             }
         }
@@ -87,7 +87,7 @@ class HomeActivity : AppCompatActivity() {
             }
         }
 
-        override fun getCount() = 2
+        override fun getCount() = 1 // TODO 
 
     }
 

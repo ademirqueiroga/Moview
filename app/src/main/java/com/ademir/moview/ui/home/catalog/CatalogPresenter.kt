@@ -33,7 +33,7 @@ class CatalogPresenter(val view: CatalogContract.View,
     }
 
     override fun onWatchlistClick(view: View, movie: Movie) {
-        
+
     }
 
 
