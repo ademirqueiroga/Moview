@@ -15,7 +15,6 @@ data class Movie(
         var homepage: String = "",
         var overview: String = "",
         var popularity: Double = 0.0,
-        var posterPath: String = "",
         var releaseDate: String = "",
         var revenue: Long = 0L,
         var runtime: Int = 0,
@@ -25,6 +24,7 @@ data class Movie(
         var video: Boolean = false,
         var voteAverage: Double = 0.0,
         var voteCount: Int = 0,
+        @Json(name = "poster_path") var posterPath: String = "",
         @Json(name = "backdrop_path") var backdropPath: String = ""
 ) {
 

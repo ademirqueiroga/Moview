@@ -11,6 +11,7 @@ import retrofit2.http.Query
 interface TmdbApiInterface {
 
     @GET(Constants.Urls.POPULAR_MOVIES)
-    fun getPopular(@Query("api_key") apiKey: String = BuildConfig.TMDB_API_KEY): Call<Movie.Payload>
+    fun getPopular(@Query("page") page: Int = 1,
+                   @Query("api_key") apiKey: String = BuildConfig.TMDB_API_KEY): Call<Movie.Payload>
 
 }

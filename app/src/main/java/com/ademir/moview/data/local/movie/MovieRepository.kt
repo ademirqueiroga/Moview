@@ -72,9 +72,11 @@ class MovieRepository(private val db: MoviewDb,
         Log.d(TAG, "Creating Movie Listing object")
 
         val boundaryCallback = MovieBoundaryCallback(
+                movieDao = db.movieDao(),
                 moviewTmdbApi = moviewTmdbApi,
                 ioExecutor = ioExecutor,
-                responseHandler = this::insertResultInDb)
+                responseHandler = this::insertResultInDb,
+                pageSize = DEFAULT_PAGE_SIZE)
 
         // Create a data source from Room
         val dataSourceFactory = db.movieDao().movies()

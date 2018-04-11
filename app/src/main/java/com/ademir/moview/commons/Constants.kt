@@ -11,8 +11,8 @@ class Constants {
         const val MOVIE = TMDB_DOMAIN + "movie/"
         const val POPULAR_MOVIES = MOVIE + "popular/"
 
-        const val TMDB_POSTER = "https://image.tmdb.org/t/p/w154"
-        const val TMDB_BACKDROP = "https://image.tmdb.org/t/p/w300"
+        const val TMDB_POSTER = "https://image.tmdb.org/t/p/w185"
+        const val TMDB_BACKDROP = "https://image.tmdb.org/t/p/w500"
     }
 
     companion object {

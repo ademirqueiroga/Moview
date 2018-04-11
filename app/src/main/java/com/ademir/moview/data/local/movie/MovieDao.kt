@@ -18,4 +18,7 @@ interface MovieDao : BaseDao<Movie> {
     @Query("DELETE FROM movies")
     fun dropTable()
 
+    @Query("SELECT count(*) FROM movies")
+    fun count(): Int
+
 }

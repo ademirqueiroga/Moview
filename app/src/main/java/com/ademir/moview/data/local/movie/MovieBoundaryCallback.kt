@@ -14,9 +14,11 @@ import java.util.concurrent.Executor
  * Created by ademir on 05/04/18.
  */
 class MovieBoundaryCallback(
+        private val movieDao: MovieDao,
         private val moviewTmdbApi: TmdbApiInterface,
         private val ioExecutor: Executor,
-        private val responseHandler: (Movie.Payload?) -> Unit
+        private val responseHandler: (Movie.Payload?) -> Unit,
+        private val pageSize: Int
 ) : PagedList.BoundaryCallback<Movie>() {
 
     private val TAG = MovieBoundaryCallback::class.java.simpleName
@@ -31,11 +33,14 @@ class MovieBoundaryCallback(
     override fun onZeroItemsLoaded() {
         Log.d(TAG, "onZeroItemsLoaded()")
         helper.runIfNotRunning(PagingRequestHelper.RequestType.INITIAL) {
-            moviewTmdbApi.getPopular()
-                    .enqueue(
-                            { data -> insertItemsIntoDb(data, it) },
-                            { fail -> it.recordFailure(fail) }
-                    )
+            ioExecutor.execute {
+                val page: Int = (movieDao.count() / pageSize) + 1
+                moviewTmdbApi.getPopular(page)
+                        .enqueue(
+                                { data -> insertItemsIntoDb(data, it) },
+                                { fail -> it.recordFailure(fail) }
+                        )
+            }
         }
     }
 
@@ -46,11 +51,15 @@ class MovieBoundaryCallback(
     override fun onItemAtEndLoaded(itemAtEnd: Movie) {
         Log.d(TAG, "onItemAtEndLoaded()")
         helper.runIfNotRunning(PagingRequestHelper.RequestType.AFTER) {
-            moviewTmdbApi.getPopular()
-                    .enqueue(
-                            { data -> insertItemsIntoDb(data, it) },
-                            { fail -> it.recordFailure(fail) }
-                    )
+            ioExecutor.execute {
+                val page: Int = (movieDao.count() / pageSize) + 1
+                Log.d("REQUESTING_PAGE", page.toString())
+                moviewTmdbApi.getPopular(page)
+                        .enqueue(
+                                { data -> insertItemsIntoDb(data, it) },
+                                { fail -> it.recordFailure(fail) }
+                        )
+            }
         }
     }
 

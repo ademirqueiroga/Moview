@@ -48,7 +48,7 @@ class MovieAdapter(val listener: OnMovieClickListener? = null) : RecyclerView.Ad
                 setOnClickListener { listener?.onMovieClick(it, adapterPosition) }
 
                 with(movie) {
-                    iv_image.load(Constants.Urls.TMDB_POSTER + posterPath, R.drawable.ic_image_gray_24dp)
+                    iv_image.load(Constants.Urls.TMDB_POSTER + posterPath)
                     tv_title.text = title
 
 //                if (categories!!.isNotEmpty()) {

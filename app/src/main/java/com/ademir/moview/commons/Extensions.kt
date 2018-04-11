@@ -11,6 +11,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import com.ademir.moview.BuildConfig
+import com.ademir.moview.R
 import com.ademir.moview.SessionController
 import com.ademir.moview.model.User
 import com.squareup.picasso.Picasso
@@ -23,9 +25,9 @@ fun ViewGroup.inflate(@LayoutRes layoutId: Int, attachToRoot: Boolean = false): 
     return LayoutInflater.from(context).inflate(layoutId, this, attachToRoot)
 }
 
-fun ImageView.load(path: String, placeholder: Int) {
+fun ImageView.load(path: String, placeholder: Int = R.drawable.ic_image_gray_24dp) {
     if (path.isNotBlank()) {
-        Picasso.get()
+        Picasso.get().apply { isLoggingEnabled = BuildConfig.DEBUG }
                 .load(path)
                 .placeholder(placeholder)
                 .into(this)

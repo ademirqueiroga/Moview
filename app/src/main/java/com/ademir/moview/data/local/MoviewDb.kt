@@ -14,7 +14,7 @@ import com.ademir.moview.model.FeedPost
  */
 @Database(
         entities = [Category::class, Movie::class],
-        version = 1,
+        version = 2,
         exportSchema = false
 )
 abstract class MoviewDb : RoomDatabase() {
