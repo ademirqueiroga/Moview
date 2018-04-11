@@ -15,15 +15,15 @@ data class Movie(
         var homepage: String = "",
         var overview: String = "",
         var popularity: Double = 0.0,
-        var releaseDate: String = "",
+        @Json(name = "release_date") var releaseDate: String = "",
         var revenue: Long = 0L,
         var runtime: Int = 0,
         var status: String = "",
         var tagline: String = "",
         var title: String = "",
         var video: Boolean = false,
-        var voteAverage: Double = 0.0,
-        var voteCount: Int = 0,
+        @Json(name = "vote_average") var voteAverage: Double = 0.0,
+        @Json(name = "vote_count") var voteCount: Int = 0,
         @Json(name = "poster_path") var posterPath: String = "",
         @Json(name = "backdrop_path") var backdropPath: String = ""
 ) {
