@@ -58,7 +58,7 @@ class CommentsFragment : Fragment() {
 //        }
 //
 //        disposable =
-//                App.apiService!!.getMovieComments(SessionController.user!!.token, movieId, query)
+//                MoviewApplication.apiService!!.getMovieComments(SessionController.user!!.token, movieId, query)
 //                        .observeOn(AndroidSchedulers.mainThread())
 //                        .doOnTerminate { showProgressBar(false) }
 //                        .subscribe(

@@ -13,13 +13,16 @@ import com.ademir.moview.data.local.MoviewDb
 import com.ademir.moview.data.models.Movie
 import com.ademir.moview.data.remote.TmdbApiInterface
 import java.util.concurrent.Executor
+import javax.inject.Inject
+import javax.inject.Singleton
 
 /**
  * Created by ademir on 05/04/18.
  */
-class MovieRepository(private val db: MoviewDb,
-                      private val moviewTmdbApi: TmdbApiInterface,
-                      private val ioExecutor: Executor) {
+@Singleton
+class MovieRepository @Inject constructor(private val db: MoviewDb,
+                                          private val moviewTmdbApi: TmdbApiInterface,
+                                          private val ioExecutor: Executor) {
 
     private val TAG = MovieRepository::class.java.simpleName
 

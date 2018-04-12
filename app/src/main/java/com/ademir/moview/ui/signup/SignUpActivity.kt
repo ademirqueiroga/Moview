@@ -1,14 +1,9 @@
 package com.ademir.moview.login
 
-import android.app.Activity
 import android.app.ProgressDialog
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import com.ademir.moview.R
-import com.ademir.moview.SessionController
-import com.ademir.moview.App
-import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import kotlinx.android.synthetic.main.activity_register.*
 
@@ -41,7 +36,7 @@ class SignUpActivity : AppCompatActivity() {
             dialog.setMessage("Sending information to database...")
             dialog.show()
 
-//            disposable = App.apiService!!.signUp(username, email, password, firstName, lastName)
+//            disposable = MoviewApplication.apiService!!.signUp(username, email, password, firstName, lastName)
 //                    .subscribeOn(AndroidSchedulers.mainThread())
 //                    .doOnTerminate { dialog.dismiss() }
 //                    .subscribe(

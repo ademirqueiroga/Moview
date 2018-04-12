@@ -8,10 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.ademir.moview.R
 import com.ademir.moview.commons.prepare
-import com.ademir.moview.SessionController
-import com.ademir.moview.App
 import com.ademir.moview.home.adapters.FeedAdapter
-import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import kotlinx.android.synthetic.main.fragment_feed.*
 
@@ -43,8 +40,8 @@ class FeedFragment : Fragment() {
 
     private fun getFeed() {
 //        val observable = when (type) {
-//            DEFAULT -> App.apiService!!.getFeed(SessionController.user!!.token, "true")
-//            else -> App.apiService!!.getFeed(SessionController.user!!.token, "false")
+//            DEFAULT -> MoviewApplication.apiService!!.getFeed(SessionController.user!!.token, "true")
+//            else -> MoviewApplication.apiService!!.getFeed(SessionController.user!!.token, "false")
 //        }
 //
 //        disposable = observable.observeOn(AndroidSchedulers.mainThread())

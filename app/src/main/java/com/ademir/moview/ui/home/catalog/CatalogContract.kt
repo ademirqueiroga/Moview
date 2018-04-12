@@ -13,6 +13,10 @@ interface CatalogContract {
 
     interface Presenter: MovieAdapter.OnMovieClickListener {
 
+        fun bindView(view: CatalogContract.View)
+
+        fun unbind()
+
         fun refresh()
 
     }

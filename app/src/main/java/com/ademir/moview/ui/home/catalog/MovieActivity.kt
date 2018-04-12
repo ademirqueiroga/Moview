@@ -36,7 +36,7 @@ class MovieActivity : AppCompatActivity() {
     }
 
     fun getMovieDetails() {
-//        disposable = App.apiService!!.getMovieDetails(SessionController.user!!.token, movieId)
+//        disposable = MoviewApplication.apiService!!.getMovieDetails(SessionController.user!!.token, movieId)
 //                .observeOn(AndroidSchedulers.mainThread())
 //                .subscribe(
 //                        { setMovie(it) },

@@ -7,18 +7,18 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.ademir.moview.App
+import com.ademir.moview.MoviewApplication
 import com.ademir.moview.R
 import com.ademir.moview.commons.NetworkState
 import com.ademir.moview.commons.prepare
-import com.ademir.moview.data.local.movie.MovieRepository
-import com.ademir.moview.data.remote.MoviewApi
-import com.ademir.moview.home.adapters.MovieAdapter
+import com.ademir.moview.di.component.DaggerApplicationComponent
 import com.ademir.moview.ui.home.catalog.CatalogContract
 import com.ademir.moview.ui.home.catalog.CatalogPresenter
 import com.ademir.moview.ui.home.catalog.adapters.PagedListMovieAdapter
+import dagger.internal.DaggerCollections
 import io.reactivex.disposables.Disposable
 import kotlinx.android.synthetic.main.fragment_movie_list.*
+import javax.inject.Inject
 
 /**
  * Created by ademir on 27/05/17.
@@ -27,9 +27,20 @@ class CatalogFragment : Fragment(), CatalogContract.View {
 
     private var type = -1
 
-    private lateinit var presenter: CatalogPresenter
+    @Inject
+    lateinit var presenter: CatalogPresenter
     private lateinit var adapter: PagedListMovieAdapter
     private var disposable: Disposable? = null
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        context?.let {
+            MoviewApplication.get(it).applicationComponent.inject(this)
+        }
+
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_movie_list, container, false)
@@ -37,7 +48,7 @@ class CatalogFragment : Fragment(), CatalogContract.View {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        presenter = CatalogPresenter(this, MovieRepository(App.database, MoviewApi.tmdbApi, App.DISK_IO))
+
         adapter = PagedListMovieAdapter(presenter)
 
         swipe_refresh_layout.setOnRefreshListener { presenter.refresh() }
@@ -58,6 +69,7 @@ class CatalogFragment : Fragment(), CatalogContract.View {
 
     override fun onDestroy() {
         super.onDestroy()
+        presenter.unbind()
         disposable?.dispose()
     }
 
@@ -68,13 +80,13 @@ class CatalogFragment : Fragment(), CatalogContract.View {
 //    }
 //
 //    override fun onFavoriteClick(view: View, movie: Movie) {
-////        App.apiService.addToFavorites(SessionController.user!!.token, movie.id)
+////        MoviewApplication.apiService.addToFavorites(SessionController.user!!.token, movie.id)
 ////                .observeOn(AndroidSchedulers.mainThread())
 ////                .subscribe({ }, Throwable::printStackTrace)
 //    }
 //
 //    override fun onWatchlistClick(view: View, movie: Movie) {
-////        App.apiService.addToWatchlist(SessionController.user!!.token, movie.id)
+////        MoviewApplication.apiService.addToWatchlist(SessionController.user!!.token, movie.id)
 ////                .observeOn(AndroidSchedulers.mainThread())
 ////                .subscribe({ }, Throwable::printStackTrace)
 //    }

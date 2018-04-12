@@ -3,12 +3,22 @@ package com.ademir.moview.ui.home.catalog
 import android.view.View
 import com.ademir.moview.data.local.movie.MovieRepository
 import com.ademir.moview.data.models.Movie
+import javax.inject.Inject
 
 /**
  * Created by ademir on 05/04/18.
  */
-class CatalogPresenter(val view: CatalogContract.View,
-                       movieRepository: MovieRepository) : CatalogContract.Presenter {
+class CatalogPresenter @Inject constructor(movieRepository: MovieRepository) : CatalogContract.Presenter {
+
+    var view: CatalogContract.View? = null
+
+    override fun bindView(view: CatalogContract.View) {
+        this.view = view
+    }
+
+    override fun unbind() {
+        this.view = null
+    }
 
     private val repoResult = movieRepository.popularMovies()
 

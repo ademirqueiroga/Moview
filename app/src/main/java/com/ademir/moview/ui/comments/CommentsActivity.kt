@@ -9,8 +9,6 @@ import android.support.v4.app.FragmentStatePagerAdapter
 import android.support.v7.app.AppCompatActivity
 import com.ademir.moview.R
 import com.ademir.moview.commons.Constants
-import com.ademir.moview.SessionController
-import com.ademir.moview.App
 import com.ademir.moview.data.models.Comment
 import com.jakewharton.rxbinding2.widget.RxTextView
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -55,7 +53,7 @@ class CommentsActivity : AppCompatActivity() {
 
     private fun sendComment() {
         btn_send.isEnabled = false
-//        App.apiService!!.sendComment(SessionController.user!!.token, movieId, et_comment.text.toString())
+//        MoviewApplication.apiService!!.sendComment(SessionController.user!!.token, movieId, et_comment.text.toString())
 //                .observeOn(AndroidSchedulers.mainThread())
 //                .doOnTerminate { et_comment.text.clear() }
 //                .subscribe({ pagerAdapter.notifyCommentAdded(it) }, Throwable::printStackTrace)

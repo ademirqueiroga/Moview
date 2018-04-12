@@ -7,7 +7,7 @@ import android.content.Context
 import com.ademir.moview.data.local.movie.MovieDao
 import com.ademir.moview.data.models.Category
 import com.ademir.moview.data.models.Movie
-import com.ademir.moview.model.FeedPost
+import javax.inject.Singleton
 
 /**
  * Created by ademir on 05/04/18.
