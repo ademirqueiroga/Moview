@@ -63,4 +63,5 @@ ext {
     firebaseVersion = '3.2.2'
     facebookVersion = '[4,5)'
     okhttpLoggingVersion = '3.9.0'
+    daggerVersion = '2.15'
 }
