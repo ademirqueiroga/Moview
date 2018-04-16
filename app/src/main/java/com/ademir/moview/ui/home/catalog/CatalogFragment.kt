@@ -35,11 +35,11 @@ class CatalogFragment : Fragment(), CatalogContract.View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         context?.let {
-            MoviewApplication.get(it).applicationComponent.inject(this)
+            MoviewApplication.get(it)
+                    .applicationComponent
+                    .inject(this)
         }
-
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

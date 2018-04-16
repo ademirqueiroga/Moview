@@ -5,6 +5,7 @@ import android.arch.persistence.room.Dao
 import android.arch.persistence.room.Query
 import com.ademir.moview.data.local.BaseDao
 import com.ademir.moview.data.models.Movie
+import javax.inject.Singleton
 
 /**
  * Created by ademir on 05/04/18.

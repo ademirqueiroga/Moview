@@ -9,6 +9,7 @@ import com.ademir.moview.commons.enqueue
 import com.ademir.moview.data.models.Movie
 import com.ademir.moview.data.remote.TmdbApiInterface
 import java.util.concurrent.Executor
+import javax.inject.Singleton
 
 /**
  * Created by ademir on 05/04/18.

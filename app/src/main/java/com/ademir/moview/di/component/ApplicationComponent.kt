@@ -20,12 +20,4 @@ interface ApplicationComponent {
 
     fun inject(catalogFragment: CatalogFragment)
 
-    fun getDatabase(): MoviewDb
-
-    fun getTmdbApi(): TmdbApiInterface
-
-    fun getExecutor(): Executor
-
-    fun getMovieRepository(): MovieRepository
-
 }

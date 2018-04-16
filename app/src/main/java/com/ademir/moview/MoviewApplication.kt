@@ -16,15 +16,6 @@ import javax.inject.Inject
 
 class MoviewApplication : Application() {
 
-    @Inject
-    lateinit var database: MoviewDb
-
-    @Inject
-    lateinit var tmdbApiInterface: TmdbApiInterface
-
-    @Inject
-    lateinit var ioExecutor: Executor
-
     lateinit var applicationComponent: ApplicationComponent
 
     override fun onCreate() {
@@ -34,8 +25,6 @@ class MoviewApplication : Application() {
                 .builder()
                 .applicationModule(ApplicationModule(this))
                 .build()
-        applicationComponent.inject(this)
-
 
         FacebookSdk.sdkInitialize(applicationContext)
         AppEventsLogger.activateApp(this)
