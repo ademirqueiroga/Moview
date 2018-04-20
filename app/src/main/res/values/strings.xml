@@ -63,5 +63,7 @@
     <string name="find_out_more">Find out more</string>
     <string name="budged_revenue">Budget/Revenue</string>
     <string name="text_friends_comments">Check your friends comments!</string>
+    <string name="text_trailer">Trailer</string>
+    <string name="text_sign_in">Sign In</string>
 
 </resources>

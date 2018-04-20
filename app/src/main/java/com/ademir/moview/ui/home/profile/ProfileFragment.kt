@@ -1,7 +1,10 @@
 package com.ademir.moview.ui.home.profile
 
+import android.app.Activity
 import android.content.Intent
+import android.graphics.Bitmap
 import android.os.Bundle
+import android.provider.MediaStore
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentStatePagerAdapter
@@ -17,6 +20,7 @@ import com.ademir.moview.home.fragments.FeedFragment
 import com.ademir.moview.login.SignInActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_profile.*
 import kotlinx.android.synthetic.main.profile_details.*
 import javax.inject.Inject
@@ -49,8 +53,26 @@ class ProfileFragment : Fragment(), ProfileContract.View {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupTabs()
+
+        profile_background.setOnClickListener {
+            val selectPhotoIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            if (selectPhotoIntent.resolveActivity(activity?.packageManager) != null) {
+                startActivityForResult(selectPhotoIntent, REQUEST_IMAGE_CAPTURE)
+            }
+        }
+
         presenter.bindView(this)
         presenter.loadUser()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
+            data?.let {
+                val extras = data.extras
+                iv_picture.setImageBitmap(extras.get("data") as Bitmap)
+            }
+        }
     }
 
     override fun onDestroy() {
@@ -105,6 +127,9 @@ class ProfileFragment : Fragment(), ProfileContract.View {
     }
 
     companion object {
+
+        const val REQUEST_IMAGE_CAPTURE = 1233
+
         fun newInstance(): ProfileFragment {
             return ProfileFragment()
         }

@@ -1,4 +1,68 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Moview</string>
+
+    <string name="navigation_drawer_open">Abrir Menu</string>
+    <string name="navigation_drawer_close">Fechar Menu</string>
+
+    <string name="action_settings">Configurações</string>
+    <string name="title_activity_sign_in">Entrar</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Senha (opcional)</string>
+    <string name="action_sign_in">Entrar ou registrar</string>
+    <string name="action_sign_in_short">Entrar</string>
+    <string name="permission_rationale">"Permissoes de contato necessaria."
+    </string>
+    <string name="dummy_text_long">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+    <string name="dummy_text_short">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</string>
+
+    <!-- row_movie -->
+    <string name="text_more_info">Mais info</string>
+
+
+    <!-- Errors -->
+    <string name="error_try_again">"Tente novamente"</string>
+    <string name="error_invalid_email">Email invalido</string>
+    <string name="error_invalid_password">Senha muito curta</string>
+    <string name="error_incorrect_password">Senha incorreta</string>
+    <string name="error_field_required">Campo requerido</string>
+    <string name="error_fetch_comments">erro ao carregar comentarios…</string>
+    <string name="text_try_again">Tentar novamente</string>
+    <string name="error_send_comment">Falha ao enviar email, tente novamente.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search_hint">Buscando…</string>
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="action_search">Buscar</string>
+    <string name="text_movies">Filmes</string>
+    <string name="text_profile">Perfil</string>
+
+    <string name="text_followers">Seguidores</string>
+    <string name="text_following">Seguindo</string>
+    <string name="action_logout">Sair</string>
+    <string name="text_comment">comentario</string>
+    <string name="text_comments">Comentarios</string>
+    <string name="text_about">sobre</string>
+    <string name="text_likes">likes</string>
+    <string name="text_hint_comment">Adicionar comentario…</string>
+    <string name="text_all">Todos</string>
+    <string name="text_comments_of_following">Comentarios de seus seguidores</string>
+    <string name="username">Usuario</string>
+    <string name="action_sign_up">Cadastrar</string>
+    <string name="text_email">email</string>
+    <string name="text_username">usuario</string>
+    <string name="text_password">senha</string>
+    <string name="text_confirm_password">confirmar senha</string>
+    <string name="text_loading">Carregando…</string>
+    <string name="text_feed">Feed</string>
+    <string name="text_facebook_signin">Entrar com facebook</string>
+    <string name="overview">Visao geral</string>
+    <string name="find_out_more">Buscar mais</string>
+    <string name="budged_revenue">Orcamento/Lucro</string>
+    <string name="text_friends_comments">Veja os comentaios de seus amigos!</string>
+    <string name="text_trailer">Trailer</string>
+    <string name="text_sign_in">Entrar</string>
 
 </resources>
