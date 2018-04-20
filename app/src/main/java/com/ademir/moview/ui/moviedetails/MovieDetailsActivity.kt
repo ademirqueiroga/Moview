@@ -31,9 +31,13 @@ class MovieDetailsActivity : AppCompatActivity(), MovieDetailsContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_details)
         setSupportActionBar(movie_detail_toolbar)
+
         MoviewApplication.get(this).applicationComponent.inject(this)
         presenter.bindView(this)
         setMovie(movie)
+
+        tv_comments.setOnClickListener {  }
+
         presenter.loadMovie(movie.id)
     }
 
@@ -45,6 +49,7 @@ class MovieDetailsActivity : AppCompatActivity(), MovieDetailsContract.View {
     override fun setMovie(movie: Movie) = with(movie) {
         movie_detail_backdrop.load(Constants.Urls.TMDB_BACKDROP + backdropPath, R.drawable.ic_image_gray_24dp)
         movie_poster_image.load(Constants.Urls.TMDB_POSTER + posterPath, R.drawable.ic_image_gray_24dp)
+        supportActionBar?.title = title
         movie_detail_toolbar.title = title
         movie_detail_release_date.text = releaseDateFormatted(releaseDate)
 
