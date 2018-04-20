@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "976011610319",
+    "firebase_url": "https://moview-8a38f.firebaseio.com",
+    "project_id": "moview-8a38f",
+    "storage_bucket": "moview-8a38f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:976011610319:android:a89e25639c682f51",
+        "android_client_info": {
+          "package_name": "com.ademir.moview"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "976011610319-hj1si6uaq7svsgamdrlg2ah0rghnrhhe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ademir.moview",
+            "certificate_hash": "041d8bdf6ccaad768d2a2778a326e0bbfc723034"
+          }
+        },
+        {
+          "client_id": "976011610319-0eiofto4mj8p4cdjf25tqag05in3qqfs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARQApDuELNVbTJ42IkAbMmjJg8KU8NCsQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "976011610319-0eiofto4mj8p4cdjf25tqag05in3qqfs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
