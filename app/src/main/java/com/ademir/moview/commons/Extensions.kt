@@ -18,6 +18,7 @@ import com.ademir.moview.R
 import com.ademir.moview.SessionController
 import com.ademir.moview.model.User
 import com.squareup.picasso.Picasso
+import com.squareup.picasso.Transformation
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -27,12 +28,16 @@ fun ViewGroup.inflate(@LayoutRes layoutId: Int, attachToRoot: Boolean = false): 
     return LayoutInflater.from(context).inflate(layoutId, this, attachToRoot)
 }
 
-fun ImageView.load(path: String, placeholder: Int = R.drawable.ic_image_gray_24dp) {
+fun ImageView.load(path: String,
+                   placeholder: Int = R.drawable.ic_image_gray_24dp,
+                   transformation: Transformation? = null) {
     if (path.isNotBlank()) {
         Picasso.get().apply { isLoggingEnabled = BuildConfig.DEBUG }
                 .load(path)
                 .placeholder(placeholder)
+                .apply { transformation?.let { transform(it) } }
                 .into(this)
+
     } else {
         setImageResource(placeholder)
     }

@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.ademir.moview.MoviewApplication
 import com.ademir.moview.R
+import com.ademir.moview.commons.CircleTransform
 import com.ademir.moview.commons.load
 import com.ademir.moview.home.fragments.CatalogFragment
 import com.ademir.moview.home.fragments.FeedFragment
@@ -49,6 +50,7 @@ class ProfileFragment : Fragment(), ProfileContract.View {
         super.onViewCreated(view, savedInstanceState)
         setupTabs()
         presenter.bindView(this)
+        presenter.loadUser()
     }
 
     override fun onDestroy() {
@@ -68,11 +70,11 @@ class ProfileFragment : Fragment(), ProfileContract.View {
         if (user == null) {
             showSignInUi()
         } else {
-            iv_picture.load(user.photoUrl.toString())
+            user.providerData.getOrNull(1)?.photoUrl.let {
+                iv_picture.load(it.toString(), transformation = CircleTransform())
+            }
             tv_username.text = user.email
             tv_name.text = user.displayName
-//        tv_followers.text = String.format("%d followers", user.followersCount)
-//        tv_following.text = String.format("%d following", user.followingCount)
         }
     }
 

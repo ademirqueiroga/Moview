@@ -1,6 +1,7 @@
 package com.ademir.moview.ui.home.profile
 
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import javax.inject.Inject
 
 /**
@@ -9,17 +10,20 @@ import javax.inject.Inject
 class ProfilePresenter @Inject constructor() : ProfileContract.Presenter {
 
     private var view: ProfileContract.View? = null
+    private var user: FirebaseUser? = null
 
     override fun bindView(view: ProfileContract.View) {
         this.view = view
+        user?.let { view.setUser(it) }
     }
 
     override fun loadUser() {
-        view?.setUser(FirebaseAuth.getInstance().currentUser)
+        user = FirebaseAuth.getInstance().currentUser
+        view?.setUser(user)
     }
 
     override fun unbind() {
-        this.view = null
+        view = null
     }
 
 }

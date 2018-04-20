@@ -1,7 +1,6 @@
 package com.ademir.moview.login
 
 import android.app.Activity
-import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -11,7 +10,6 @@ import com.ademir.moview.home.HomeActivity
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.IdpResponse
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_login.*
 
 class SignInActivity : AppCompatActivity() {
@@ -22,11 +20,16 @@ class SignInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        val signInProviders = listOf(
+                AuthUI.IdpConfig.Builder(AuthUI.FACEBOOK_PROVIDER).build(),
+                AuthUI.IdpConfig.Builder(AuthUI.GOOGLE_PROVIDER).build()
+        )
+
         btn_fb.setOnClickListener {
             startActivityForResult(
                     AuthUI.getInstance()
                             .createSignInIntentBuilder()
-                            .setAvailableProviders(listOf(AuthUI.IdpConfig.Builder(AuthUI.FACEBOOK_PROVIDER).build()))
+                            .setAvailableProviders(signInProviders)
                             .build(),
                     CODE_SIGNIN_FACEBOOK
             )
@@ -38,10 +41,6 @@ class SignInActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == CODE_SIGNIN_FACEBOOK && resultCode == Activity.RESULT_OK) {
             data?.let {
-//                val response = IdpResponse.fromResultIntent(data)
-//                val user = FirebaseAuth.getInstance().currentUser
-//                Log.d(TAG, "REPONSE:" + response.toString())
-//                Log.d(TAG, "USER:" + user.toString())
                 startActivity(Intent(this, HomeActivity::class.java))
                 finish()
             }
