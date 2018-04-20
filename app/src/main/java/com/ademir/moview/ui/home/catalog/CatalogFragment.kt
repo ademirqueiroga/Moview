@@ -11,11 +11,11 @@ import com.ademir.moview.MoviewApplication
 import com.ademir.moview.R
 import com.ademir.moview.commons.NetworkState
 import com.ademir.moview.commons.prepare
-import com.ademir.moview.di.component.DaggerApplicationComponent
+import com.ademir.moview.data.models.Movie
+import com.ademir.moview.ui.moviedetails.MovieDetailsActivity
 import com.ademir.moview.ui.home.catalog.CatalogContract
 import com.ademir.moview.ui.home.catalog.CatalogPresenter
 import com.ademir.moview.ui.home.catalog.adapters.PagedListMovieAdapter
-import dagger.internal.DaggerCollections
 import io.reactivex.disposables.Disposable
 import kotlinx.android.synthetic.main.fragment_movie_list.*
 import javax.inject.Inject
@@ -30,7 +30,6 @@ class CatalogFragment : Fragment(), CatalogContract.View {
     @Inject
     lateinit var presenter: CatalogPresenter
     private lateinit var adapter: PagedListMovieAdapter
-    private var disposable: Disposable? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,6 +47,7 @@ class CatalogFragment : Fragment(), CatalogContract.View {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        presenter.bindView(this)
 
         adapter = PagedListMovieAdapter(presenter)
 
@@ -70,32 +70,13 @@ class CatalogFragment : Fragment(), CatalogContract.View {
     override fun onDestroy() {
         super.onDestroy()
         presenter.unbind()
-        disposable?.dispose()
     }
 
-//    override fun onMovieClick(view: View, position: Int) {
-////        context?.let {
-////            startActivity(MovieActivity.createIntent(it, adapter.getMovieId(position)))
-////        }
-//    }
-//
-//    override fun onFavoriteClick(view: View, movie: Movie) {
-////        MoviewApplication.apiService.addToFavorites(SessionController.user!!.token, movie.id)
-////                .observeOn(AndroidSchedulers.mainThread())
-////                .subscribe({ }, Throwable::printStackTrace)
-//    }
-//
-//    override fun onWatchlistClick(view: View, movie: Movie) {
-////        MoviewApplication.apiService.addToWatchlist(SessionController.user!!.token, movie.id)
-////                .observeOn(AndroidSchedulers.mainThread())
-////                .subscribe({ }, Throwable::printStackTrace)
-//    }
-//
-//    override fun onCommentClick(view: View, movie: Movie) {
-////        context?.let {
-////            startActivity(CommentsActivity.createIntent(it, movie.id))
-////        }
-//    }
+    override fun showMovieDetailsUi(movie: Movie) {
+        context?.let {
+            startActivity(MovieDetailsActivity.createIntent(it, movie))
+        }
+    }
 
     companion object {
         const val DEFAULT = 0

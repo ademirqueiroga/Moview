@@ -1,15 +1,11 @@
 package com.ademir.moview.di.component
 
 import com.ademir.moview.MoviewApplication
-import com.ademir.moview.data.local.MoviewDb
-import com.ademir.moview.data.local.movie.MovieRepository
-import com.ademir.moview.data.remote.TmdbApiInterface
-import com.ademir.moview.di.IoExecutor
 import com.ademir.moview.di.module.ApplicationModule
 import com.ademir.moview.home.fragments.CatalogFragment
+import com.ademir.moview.ui.home.profile.ProfileFragment
+import com.ademir.moview.ui.moviedetails.MovieDetailsActivity
 import dagger.Component
-import java.util.concurrent.Executor
-import javax.inject.Named
 import javax.inject.Singleton
 
 @Singleton
@@ -19,5 +15,9 @@ interface ApplicationComponent {
     fun inject(moviewApplication: MoviewApplication)
 
     fun inject(catalogFragment: CatalogFragment)
+
+    fun inject(movieDetailsActivity: MovieDetailsActivity)
+
+    fun inject(profileFragment: ProfileFragment)
 
 }

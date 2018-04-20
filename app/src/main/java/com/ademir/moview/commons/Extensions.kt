@@ -4,6 +4,8 @@ import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import android.content.Context
 import android.content.SharedPreferences
+import android.os.Parcel
+import android.os.Parcelable
 import android.preference.PreferenceManager
 import android.support.annotation.LayoutRes
 import android.support.v7.widget.RecyclerView
@@ -128,3 +130,10 @@ fun PagingRequestHelper.createStatusLiveData(): LiveData<NetworkState> {
     }
     return liveData
 }
+
+inline fun <reified T : Parcelable> createParcel(
+        crossinline createFromParcel: (Parcel) -> T?): Parcelable.Creator<T> =
+        object : Parcelable.Creator<T> {
+            override fun createFromParcel(source: Parcel): T? = createFromParcel(source)
+            override fun newArray(size: Int): Array<out T?> = arrayOfNulls(size)
+        }

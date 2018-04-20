@@ -3,21 +3,20 @@ package com.ademir.moview.commons
 
 class Constants {
 
-
+    @Suppress("ConvertToStringTemplate")
     object Urls {
 
         //TMDB
         const val TMDB_DOMAIN = "https://api.themoviedb.org/3/"
         const val MOVIE = TMDB_DOMAIN + "movie/"
         const val POPULAR_MOVIES = MOVIE + "popular/"
+        const val MOVIE_DETAILS = MOVIE + "{pk}"
 
         const val TMDB_POSTER = "https://image.tmdb.org/t/p/w185"
         const val TMDB_BACKDROP = "https://image.tmdb.org/t/p/w500"
     }
 
     companion object {
-
-        val EXTRA_MOVIE_ID = "extra_movie_id"
 
         //prefs
         const val PREF_SESSION_USERNAME = "pref_username"

@@ -30,8 +30,8 @@ class CatalogPresenter @Inject constructor(movieRepository: MovieRepository) : C
         repoResult.refresh()
     }
 
-    override fun onMovieClick(view: View, position: Int) {
-
+    override fun onMovieClick(view: View, movie: Movie) {
+        this.view?.showMovieDetailsUi(movie)
     }
 
     override fun onFavoriteClick(view: View, movie: Movie) {

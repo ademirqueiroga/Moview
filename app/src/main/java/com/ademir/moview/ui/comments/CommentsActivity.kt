@@ -18,7 +18,8 @@ import kotlinx.android.synthetic.main.activity_comments.*
 
 class CommentsActivity : AppCompatActivity() {
 
-    private val movieId by lazy { intent.getIntExtra(Constants.EXTRA_MOVIE_ID, -1) }
+//    private val movieId by lazy { intent.getIntExtra(Constants.EXTRA_MOVIE_ID, -1) }
+    private val movieId = 1
     private val pagerAdapter by lazy { comments_viewpager.adapter as CommentsPagerAdapter }
     private var disposable: CompositeDisposable? = null
 
@@ -68,7 +69,7 @@ class CommentsActivity : AppCompatActivity() {
 
         fun createIntent(context: Context, movieId: Int): Intent {
             val intent = Intent(context, CommentsActivity::class.java)
-            intent.putExtra(Constants.EXTRA_MOVIE_ID, movieId)
+            intent.putExtra("extra_id", movieId)
             return intent
         }
 

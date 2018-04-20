@@ -16,7 +16,7 @@ object MoviewApi {
             .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BASIC))
             .build()
 
-    val tmdbApi = Retrofit.Builder()
+    val tmdbApi: TmdbApiInterface = Retrofit.Builder()
             .baseUrl(Constants.Urls.TMDB_DOMAIN)
             .client(okHttpClient)
             .addCallAdapterFactory(rxJavaAdapter)

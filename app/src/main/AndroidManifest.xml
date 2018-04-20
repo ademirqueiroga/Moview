@@ -28,7 +28,7 @@
                 android:name="android.app.default_searchable"
                 android:value=".search.SearchActivity" />
         </activity>
-        <activity android:name=".home.MovieActivity" />
+        <activity android:name=".ui.moviedetails.MovieDetailsActivity" />
         <activity android:name="com.ademir.moview.ui.comments.CommentsActivity" />
         <activity android:name=".search.SearchActivity">
             <intent-filter>

@@ -1,5 +1,6 @@
 package com.ademir.moview.ui.home.catalog
 
+import com.ademir.moview.data.models.Movie
 import com.ademir.moview.home.adapters.MovieAdapter
 
 /**
@@ -9,9 +10,11 @@ interface CatalogContract {
 
     interface View {
 
+        fun showMovieDetailsUi(movie: Movie)
+
     }
 
-    interface Presenter: MovieAdapter.OnMovieClickListener {
+    interface Presenter : MovieAdapter.OnMovieClickListener {
 
         fun bindView(view: CatalogContract.View)
 

@@ -8,6 +8,7 @@ import com.ademir.moview.data.remote.MoviewApi
 import com.ademir.moview.data.remote.TmdbApiInterface
 import com.ademir.moview.di.ApplicationContext
 import com.ademir.moview.di.IoExecutor
+import com.ademir.moview.ui.moviedetails.MovieDetailsPresenter
 import dagger.Module
 import dagger.Provides
 import java.util.concurrent.Executor

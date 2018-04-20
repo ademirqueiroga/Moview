@@ -95,8 +95,8 @@ class SearchActivity : AppCompatActivity(), UserAdapter.UserClickListener, Movie
         return fragment
     }
 
-    override fun onMovieClick(view: View, position: Int) {
-        val id = (fragments[MOVIES]!!.adapter as MovieAdapter).getMovieId(position)
+    override fun onMovieClick(view: View, movie: Movie) {
+//        val id = (fragments[MOVIES]!!.adapter as MovieAdapter).getMovieId(position)
 //        startActivity(MovieActivity.createIntent(this, id))
     }
 

@@ -17,8 +17,7 @@ import android.view.MenuItem
 import com.ademir.moview.R
 import com.ademir.moview.SessionController
 import com.ademir.moview.home.fragments.CatalogFragment
-import com.ademir.moview.home.fragments.FeedFragment
-import com.ademir.moview.home.fragments.ProfileFragment
+import com.ademir.moview.ui.home.profile.ProfileFragment
 import com.ademir.moview.login.SignInActivity
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.content_home.*
@@ -77,19 +76,19 @@ class HomeActivity : AppCompatActivity() {
             return when (position) {
 //                0 -> FeedFragment()
                 0 -> CatalogFragment()
-                else -> ProfileFragment.newInstance(SessionController.user!!)
+                else -> ProfileFragment.newInstance()
             }
         }
 
         override fun getPageTitle(position: Int): CharSequence? {
             return when (position) {
                 0 -> context.getString(R.string.text_feed)
-                1 -> context.getString(R.string.text_movies)
+//                1 -> context.getString(R.string.text_movies)
                 else -> context.getString(R.string.text_profile)
             }
         }
 
-        override fun getCount() = 1 // TODO
+        override fun getCount() = 2 // TODO
 
     }
 

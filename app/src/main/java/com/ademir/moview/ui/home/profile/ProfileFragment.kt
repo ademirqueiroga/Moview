@@ -1,5 +1,6 @@
-package com.ademir.moview.home.fragments
+package com.ademir.moview.ui.home.profile
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
@@ -7,15 +8,38 @@ import android.support.v4.app.FragmentStatePagerAdapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.ademir.moview.MoviewApplication
 import com.ademir.moview.R
-import com.ademir.moview.model.User
+import com.ademir.moview.commons.load
+import com.ademir.moview.home.fragments.CatalogFragment
+import com.ademir.moview.home.fragments.FeedFragment
+import com.ademir.moview.login.SignInActivity
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.fragment_profile.*
 import kotlinx.android.synthetic.main.profile_details.*
+import javax.inject.Inject
 
 
-class ProfileFragment : Fragment() {
+class ProfileFragment : Fragment(), ProfileContract.View {
 
-    private lateinit var user: User
+    private var user: FirebaseUser? = null
+
+    @Inject
+    lateinit var presenter: ProfilePresenter
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        context?.let {
+            MoviewApplication.get(it).applicationComponent.inject(this)
+        }
+
+        this.user = FirebaseAuth.getInstance().currentUser
+        if (this.user == null) {
+            showSignInUi()
+        }
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_profile, container, false)
@@ -24,7 +48,12 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupTabs()
-        setUser(user)
+        presenter.bindView(this)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.unbind()
     }
 
     private fun setupTabs() {
@@ -35,19 +64,22 @@ class ProfileFragment : Fragment() {
         }
     }
 
-    private fun setUser(user: User) = with(user) {
-        tv_username.text = String.format("@%s", username)
-        tv_name.text = user.name
-        tv_followers.text = String.format("%d followers", user.followersCount)
-        tv_following.text = String.format("%d following", user.followingCount)
+    override fun setUser(user: FirebaseUser?) {
+        if (user == null) {
+            showSignInUi()
+        } else {
+            iv_picture.load(user.photoUrl.toString())
+            tv_username.text = user.email
+            tv_name.text = user.displayName
+//        tv_followers.text = String.format("%d followers", user.followersCount)
+//        tv_following.text = String.format("%d following", user.followingCount)
+        }
     }
 
-    companion object {
-        fun newInstance(user: User): ProfileFragment {
-            val frag = ProfileFragment()
-            frag.user = user
-            return frag
-        }
+    override fun showSignInUi() {
+        FirebaseAuth.getInstance().signOut()
+        activity?.finish()
+        startActivity(Intent(context, SignInActivity::class.java))
     }
 
     class ProfileViewPagerAdapter(manager: FragmentManager) : FragmentStatePagerAdapter(manager) {
@@ -68,7 +100,12 @@ class ProfileFragment : Fragment() {
 
         override fun getCount() = 3
 
+    }
 
+    companion object {
+        fun newInstance(): ProfileFragment {
+            return ProfileFragment()
+        }
     }
 
 }
