@@ -59,14 +59,22 @@ O app irá utilizar o reprodutor de vídeos nativo do Android para exibir traile
 7. *Dagger2* - https://google.github.io/dagger/
 
 ### Organização do App
-Pacote commons: Com algumas constantes e funções que são usadas em vários locais do app.
-Pacote Data: Onde está toda a parte de models (que definem a estrutura dos objetos, nomes das colunas no banco de dados, etc)
+
+#### Descrevendo cada pacote
+
+Pacote `commons`: Com algumas constantes e funções que são usadas em vários locais do app.
+
+Pacote `data`: Onde está toda a parte de models (que definem a estrutura dos objetos, nomes das colunas no banco de dados, etc)
  e persistência de dados. Dentro deste pacote temos a implementação de um repositório 
-e de uma API. O Pacote `local` é responsável por  persistir a informação utilizando o Room (que é basicamente um wrapper para o SQLite) e disparar 
+e de uma API. 
+
+O Pacote `local` é responsável por  persistir a informação utilizando o Room (que é basicamente um wrapper para o SQLite) e disparar 
 Requests para a api quando necessário (baixar a próxima página de conteúdo). O repositório é implementado de uma maneira que ele gerencia tanto as
 Chamadas na API, levando em consideração a paginação, assim como quando o conteúdo deve ser deletado para ser atualizado.
-Pacote DI: contém os componentes e módulos necessários para o funcionamento do Dagger2. Os módulos são basicamente classes que provêem as dependências 
+
+Pacote `di`: contém os componentes e módulos necessários para o funcionamento do Dagger2. Os módulos são basicamente classes que provêem as dependências 
 Para o dagger e os componentes são interfaces que “dizem” como o dagger irá prover as dependências que ele possui no seu grafo de objetos para as classes dependentes.
-Pacote ui: É onde fica toda a parte de interface de usuário. Está dividido por feature e seguindo o padrão MVP no pacote de cada feature encontram-se quase sempre uma 
+
+Pacote `ui`: É onde fica toda a parte de interface de usuário. Está dividido por feature e seguindo o padrão MVP no pacote de cada feature encontram-se quase sempre uma 
 Implementação de um Presenter e uma View definidas por um Contract. Em alguns casos é necessário mais do que apenas os componentes do MVP como por exemplo adapters
 Para um recycler view que também são encontrados no pacote ui, dentro da sua feature.
