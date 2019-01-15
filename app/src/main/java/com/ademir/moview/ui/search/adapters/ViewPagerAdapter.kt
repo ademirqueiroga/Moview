@@ -1,13 +1,13 @@
 package com.ademir.moview.search.adapters
 
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentStatePagerAdapter
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentStatePagerAdapter
 import com.ademir.moview.search.fragments.RecyclerViewFragment
 
 /**
  * Created by ademir on 28/05/17.
  */
-class ViewPagerAdapter(val fragments: ArrayList<RecyclerViewFragment>, fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
+class ViewPagerAdapter(val fragments: ArrayList<RecyclerViewFragment>, fm: androidx.fragment.app.FragmentManager) : androidx.fragment.app.FragmentStatePagerAdapter(fm) {
 
     override fun getItem(position: Int) = fragments[position]
 

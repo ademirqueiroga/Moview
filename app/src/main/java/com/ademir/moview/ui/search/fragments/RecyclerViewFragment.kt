@@ -1,9 +1,9 @@
 package com.ademir.moview.search.fragments
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,9 +14,9 @@ import kotlinx.android.synthetic.main.fragment_recyclerview.*
 /**
  * Created by ademir on 28/05/17.
  */
-class RecyclerViewFragment : Fragment() {
+class RecyclerViewFragment : androidx.fragment.app.Fragment() {
 
-    lateinit var adapter: RecyclerView.Adapter<*>
+    lateinit var adapter: androidx.recyclerview.widget.RecyclerView.Adapter<*>
     lateinit var title: String
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -25,11 +25,11 @@ class RecyclerViewFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        recycler_view.prepare(adapter, LinearLayoutManager(context))
+        recycler_view.prepare(adapter, androidx.recyclerview.widget.LinearLayoutManager(context))
     }
 
     companion object {
-        fun newInstance(adapter: RecyclerView.Adapter<*>, title: String = ""): RecyclerViewFragment {
+        fun newInstance(adapter: androidx.recyclerview.widget.RecyclerView.Adapter<*>, title: String = ""): RecyclerViewFragment {
             val frag = RecyclerViewFragment()
             frag.adapter = adapter
             frag.title = title

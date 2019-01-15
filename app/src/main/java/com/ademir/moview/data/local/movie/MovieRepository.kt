@@ -1,10 +1,10 @@
 package com.ademir.moview.data.local.movie
 
-import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.Transformations
-import android.arch.paging.LivePagedListBuilder
-import android.support.annotation.MainThread
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Transformations
+import androidx.paging.LivePagedListBuilder
+import androidx.annotation.MainThread
 import android.util.Log
 import com.ademir.moview.commons.Listing
 import com.ademir.moview.commons.NetworkState

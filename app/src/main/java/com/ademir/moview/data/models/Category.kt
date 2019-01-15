@@ -1,7 +1,7 @@
 package com.ademir.moview.data.models
 
-import android.arch.persistence.room.Entity
-import android.arch.persistence.room.PrimaryKey
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
 @Entity(tableName = "categories")
 data class Category(@PrimaryKey val id: String,

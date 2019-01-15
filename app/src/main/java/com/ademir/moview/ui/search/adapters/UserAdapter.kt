@@ -1,6 +1,6 @@
 package com.ademir.moview.search.adapters
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
 import com.ademir.moview.R
@@ -9,7 +9,7 @@ import com.ademir.moview.model.User
 import kotlinx.android.synthetic.main.row_user.view.*
 
 
-class UserAdapter(val listener: UserAdapter.UserClickListener) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class UserAdapter(val listener: UserAdapter.UserClickListener) : androidx.recyclerview.widget.RecyclerView.Adapter<androidx.recyclerview.widget.RecyclerView.ViewHolder>() {
 
     private var dataSet = ArrayList<User>()
 
@@ -17,7 +17,7 @@ class UserAdapter(val listener: UserAdapter.UserClickListener) : RecyclerView.Ad
         return UserViewHolder(parent.inflate(R.layout.row_user), listener)
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: androidx.recyclerview.widget.RecyclerView.ViewHolder, position: Int) {
         holder as UserViewHolder
         holder.bind(dataSet[position])
     }
@@ -30,7 +30,7 @@ class UserAdapter(val listener: UserAdapter.UserClickListener) : RecyclerView.Ad
         notifyDataSetChanged()
     }
 
-    inner class UserViewHolder(itemView: View, private val listener: UserClickListener?) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
+    inner class UserViewHolder(itemView: View, private val listener: UserClickListener?) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView), View.OnClickListener {
 
         init {
             itemView.setOnClickListener(this)

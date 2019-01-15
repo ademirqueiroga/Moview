@@ -1,9 +1,9 @@
 package com.ademir.moview.home.fragments
 
-import android.arch.lifecycle.Observer
+import androidx.lifecycle.Observer
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.LinearLayoutManager
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,7 +23,7 @@ import javax.inject.Inject
 /**
  * Created by ademir on 27/05/17.
  */
-class CatalogFragment : Fragment(), CatalogContract.View {
+class CatalogFragment : androidx.fragment.app.Fragment(), CatalogContract.View {
 
     private var type = -1
 
@@ -53,7 +53,7 @@ class CatalogFragment : Fragment(), CatalogContract.View {
 
         swipe_refresh_layout.setOnRefreshListener { presenter.refresh() }
 
-        recycler_view.prepare(adapter, LinearLayoutManager(context))
+        recycler_view.prepare(adapter, androidx.recyclerview.widget.LinearLayoutManager(context))
         with(presenter) {
             moviesPagedList.observe(this@CatalogFragment, Observer {
                 adapter.submitList(it)

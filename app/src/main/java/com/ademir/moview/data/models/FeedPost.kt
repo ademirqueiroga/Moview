@@ -1,6 +1,6 @@
 package com.ademir.moview.model
 
-import android.arch.persistence.room.Entity
+import androidx.room.Entity
 import com.ademir.moview.data.models.Movie
 import com.squareup.moshi.Json
 

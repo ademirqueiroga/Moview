@@ -1,8 +1,8 @@
 package com.ademir.moview.data.local.category
 
-import android.arch.lifecycle.LiveData
-import android.arch.persistence.room.Dao
-import android.arch.persistence.room.Query
+import androidx.lifecycle.LiveData
+import androidx.room.Dao
+import androidx.room.Query
 import com.ademir.moview.data.local.BaseDao
 import com.ademir.moview.data.models.Category
 

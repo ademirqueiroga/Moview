@@ -1,8 +1,8 @@
 package com.ademir.moview.home.fragments
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.LinearLayoutManager
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.fragment_feed.*
 /**
  * Created by ademir on 27/05/17.
  */
-class FeedFragment : Fragment() {
+class FeedFragment : androidx.fragment.app.Fragment() {
 
     private var type = -1
 
@@ -28,7 +28,7 @@ class FeedFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        rv_feed.prepare(FeedAdapter(), LinearLayoutManager(context))
+        rv_feed.prepare(FeedAdapter(), androidx.recyclerview.widget.LinearLayoutManager(context))
         feed_refresh_layout.setOnRefreshListener { getFeed() }
         getFeed()
     }

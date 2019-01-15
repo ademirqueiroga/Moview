@@ -1,7 +1,7 @@
 package com.ademir.moview.ui.comments.adapters
 
 import android.content.Context
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
 import com.ademir.moview.R
@@ -15,7 +15,7 @@ import java.util.*
 /**
  * Created by ademir on 28/05/17.
  */
-class CommentAdapter(val context: Context) : RecyclerView.Adapter<CommentAdapter.CommentViewHolder>() {
+class CommentAdapter(val context: Context) : androidx.recyclerview.widget.RecyclerView.Adapter<CommentAdapter.CommentViewHolder>() {
 
     private val dataSet = ArrayList<Comment>()
 
@@ -46,7 +46,7 @@ class CommentAdapter(val context: Context) : RecyclerView.Adapter<CommentAdapter
         notifyItemInserted(0)
     }
 
-    class CommentViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class CommentViewHolder(view: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(view) {
 
         companion object {
             val dateFormatter = SimpleDateFormat("HH:mm", Locale.getDefault())

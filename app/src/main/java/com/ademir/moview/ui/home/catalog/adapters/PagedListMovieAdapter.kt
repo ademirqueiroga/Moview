@@ -1,8 +1,8 @@
 package com.ademir.moview.ui.home.catalog.adapters
 
-import android.arch.paging.PagedListAdapter
-import android.support.v7.util.DiffUtil
-import android.support.v7.widget.RecyclerView
+import androidx.paging.PagedListAdapter
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.RecyclerView
 import android.view.ViewGroup
 import com.ademir.moview.R
 import com.ademir.moview.commons.inflate
@@ -10,13 +10,13 @@ import com.ademir.moview.data.models.Movie
 import com.ademir.moview.home.adapters.MovieAdapter
 
 class PagedListMovieAdapter(val listener: MovieAdapter.OnMovieClickListener)
-    : PagedListAdapter<Movie, RecyclerView.ViewHolder>(DIFF_CALLBACK) {
+    : PagedListAdapter<Movie, androidx.recyclerview.widget.RecyclerView.ViewHolder>(DIFF_CALLBACK) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): androidx.recyclerview.widget.RecyclerView.ViewHolder {
         return MovieAdapter.MovieViewHolder(parent.inflate(R.layout.row_movie), listener)
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: androidx.recyclerview.widget.RecyclerView.ViewHolder, position: Int) {
         (holder as MovieAdapter.MovieViewHolder).bind(getItem(position))
     }
 

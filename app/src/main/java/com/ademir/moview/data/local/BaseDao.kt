@@ -1,6 +1,6 @@
 package com.ademir.moview.data.local
 
-import android.arch.persistence.room.*
+import androidx.room.*
 
 @Dao
 interface BaseDao<in T> {

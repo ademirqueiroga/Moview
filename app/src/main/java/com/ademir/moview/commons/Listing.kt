@@ -1,7 +1,7 @@
 package com.ademir.moview.commons
 
-import android.arch.lifecycle.LiveData
-import android.arch.paging.PagedList
+import androidx.lifecycle.LiveData
+import androidx.paging.PagedList
 
 data class Listing<T>(
         // the LiveData of paged lists for the UI to observe

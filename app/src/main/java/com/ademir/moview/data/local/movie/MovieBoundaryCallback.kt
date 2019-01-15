@@ -1,7 +1,7 @@
 package com.ademir.moview.data.local.movie
 
-import android.arch.paging.PagedList
-import android.support.annotation.MainThread
+import androidx.paging.PagedList
+import androidx.annotation.MainThread
 import android.util.Log
 import com.ademir.moview.commons.PagingRequestHelper
 import com.ademir.moview.commons.createStatusLiveData

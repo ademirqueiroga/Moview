@@ -3,8 +3,8 @@ package com.ademir.moview.search
 import android.app.SearchManager
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.RecyclerView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.RecyclerView
 import android.util.TypedValue
 import android.view.View
 import com.ademir.moview.R
@@ -89,7 +89,7 @@ class SearchActivity : AppCompatActivity(), UserAdapter.UserClickListener, Movie
         search_tabs.setAllCaps(true)
     }
 
-    private fun <T : RecyclerView.Adapter<*>> createRvFragment(adapter: T, title: String): RecyclerViewFragment {
+    private fun <T : androidx.recyclerview.widget.RecyclerView.Adapter<*>> createRvFragment(adapter: T, title: String): RecyclerViewFragment {
         val fragment = RecyclerViewFragment.newInstance(adapter, title)
         fragments.put(title, fragment)
         return fragment

@@ -113,7 +113,7 @@
             android:layout_toEndOf="@+id/iv_image"
             android:background="@color/light_gray" />
 
-        <android.support.v7.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_comment"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
@@ -138,7 +138,7 @@
             android:scaleType="center"
             android:src="@drawable/check_star" />
 
-        <android.support.v7.widget.AppCompatImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/btn_watchlist"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"

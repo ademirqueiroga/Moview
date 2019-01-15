@@ -45,7 +45,7 @@
             android:textSize="14sp"
             android:text="Admin admin"/>
 
-        <android.support.v7.widget.AppCompatImageButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/btn_follow"
             style="@style/BtnFollow"
             android:layout_width="wrap_content"

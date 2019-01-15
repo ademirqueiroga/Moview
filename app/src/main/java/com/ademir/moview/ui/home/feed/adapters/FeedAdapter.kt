@@ -1,6 +1,6 @@
 package com.ademir.moview.home.adapters
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
 import com.ademir.moview.R
@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.row_feed.view.*
 /**
  * Created by ademir on 27/05/17.
  */
-class FeedAdapter: RecyclerView.Adapter<FeedAdapter.FeedItemViewHolder>() {
+class FeedAdapter: androidx.recyclerview.widget.RecyclerView.Adapter<FeedAdapter.FeedItemViewHolder>() {
 
     private val dataSet = ArrayList<FeedPost>()
 
@@ -32,7 +32,7 @@ class FeedAdapter: RecyclerView.Adapter<FeedAdapter.FeedItemViewHolder>() {
         notifyDataSetChanged()
     }
 
-    class FeedItemViewHolder(view: View): RecyclerView.ViewHolder(view) {
+    class FeedItemViewHolder(view: View): androidx.recyclerview.widget.RecyclerView.ViewHolder(view) {
         fun bind(post: FeedPost) = with(itemView){
             with(post) {
                 tv_post_info.text = String.format("%s commented about:", user.name)

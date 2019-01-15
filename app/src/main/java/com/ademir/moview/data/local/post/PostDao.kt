@@ -1,6 +1,6 @@
 package com.ademir.moview.data.local.post
 
-import android.arch.persistence.room.Dao
+import androidx.room.Dao
 
 /**
  * Created by ademir on 05/04/18.

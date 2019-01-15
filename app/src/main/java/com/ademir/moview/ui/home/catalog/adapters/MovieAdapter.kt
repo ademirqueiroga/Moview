@@ -1,6 +1,6 @@
 package com.ademir.moview.home.adapters
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
 import com.ademir.moview.R
@@ -13,11 +13,11 @@ import kotlinx.android.synthetic.main.row_movie.view.*
 /**
  * Created by ademir on 27/05/17.
  */
-class MovieAdapter(val listener: OnMovieClickListener? = null) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class MovieAdapter(val listener: OnMovieClickListener? = null) : androidx.recyclerview.widget.RecyclerView.Adapter<androidx.recyclerview.widget.RecyclerView.ViewHolder>() {
 
     private val dataSet = ArrayList<Movie>(10)
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: androidx.recyclerview.widget.RecyclerView.ViewHolder, position: Int) {
         holder as MovieViewHolder
         holder.bind(dataSet[position])
     }
@@ -40,7 +40,7 @@ class MovieAdapter(val listener: OnMovieClickListener? = null) : RecyclerView.Ad
         notifyDataSetChanged()
     }
 
-    class MovieViewHolder(view: View, var listener: OnMovieClickListener?) : RecyclerView.ViewHolder(view) {
+    class MovieViewHolder(view: View, var listener: OnMovieClickListener?) : androidx.recyclerview.widget.RecyclerView.ViewHolder(view) {
 
         fun bind(movie: Movie?) = with(itemView) {
             if (movie != null) {

@@ -1,8 +1,8 @@
 package com.ademir.moview.ui.comments
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.LinearLayoutManager
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.fragment_comments.*
 /**
  * Created by ademir on 28/05/17.
  */
-class CommentsFragment : Fragment() {
+class CommentsFragment : androidx.fragment.app.Fragment() {
 
     private var movieId: Int = -1
     private var contentType: Int = -1
@@ -32,7 +32,13 @@ class CommentsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         context?.let {
             val adapter = CommentAdapter(it)
-            recycler_view.prepare(adapter, LinearLayoutManager(it, LinearLayoutManager.VERTICAL, true))
+            recycler_view.prepare(adapter,
+                androidx.recyclerview.widget.LinearLayoutManager(
+                    it,
+                    androidx.recyclerview.widget.LinearLayoutManager.VERTICAL,
+                    true
+                )
+            )
         }
         loadComments()
     }

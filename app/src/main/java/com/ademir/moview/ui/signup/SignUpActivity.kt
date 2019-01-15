@@ -1,7 +1,7 @@
 package com.ademir.moview.login
 
 import android.app.ProgressDialog
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.ademir.moview.R
 import io.reactivex.disposables.Disposable

@@ -5,11 +5,11 @@ import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentStatePagerAdapter
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.SearchView
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentStatePagerAdapter
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import android.util.TypedValue.COMPLEX_UNIT_DIP
 import android.util.TypedValue.applyDimension
 import android.view.Menu
@@ -69,10 +69,10 @@ class HomeActivity : AppCompatActivity() {
         finish()
     }
 
-    class HomeViewPagerAdapter(manager: FragmentManager, val context: Context) : FragmentStatePagerAdapter(manager) {
+    class HomeViewPagerAdapter(manager: androidx.fragment.app.FragmentManager, val context: Context) : androidx.fragment.app.FragmentStatePagerAdapter(manager) {
 
 
-        override fun getItem(position: Int): Fragment {
+        override fun getItem(position: Int): androidx.fragment.app.Fragment {
             return when (position) {
 //                0 -> FeedFragment()
                 0 -> CatalogFragment()

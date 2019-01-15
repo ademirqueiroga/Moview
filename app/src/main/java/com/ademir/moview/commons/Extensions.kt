@@ -1,14 +1,14 @@
 package com.ademir.moview.commons
 
-import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.MutableLiveData
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Parcel
 import android.os.Parcelable
 import android.preference.PreferenceManager
-import android.support.annotation.LayoutRes
-import android.support.v7.widget.RecyclerView
+import androidx.annotation.LayoutRes
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -83,8 +83,8 @@ fun releaseDateFormatted(date: String?): String {
     return ""
 }
 
-fun <T : RecyclerView.ViewHolder> RecyclerView.prepare(adapter: RecyclerView.Adapter<T>,
-                                                       layoutManager: RecyclerView.LayoutManager,
+fun <T : androidx.recyclerview.widget.RecyclerView.ViewHolder> androidx.recyclerview.widget.RecyclerView.prepare(adapter: androidx.recyclerview.widget.RecyclerView.Adapter<T>,
+                                                       layoutManager: androidx.recyclerview.widget.RecyclerView.LayoutManager,
                                                        hasFixedSize: Boolean = true) {
     setAdapter(adapter)
     setLayoutManager(layoutManager)

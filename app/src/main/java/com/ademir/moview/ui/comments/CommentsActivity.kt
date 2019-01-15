@@ -3,10 +3,10 @@ package com.ademir.moview.ui.comments
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentStatePagerAdapter
-import android.support.v7.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentStatePagerAdapter
+import androidx.appcompat.app.AppCompatActivity
 import com.ademir.moview.R
 import com.ademir.moview.commons.Constants
 import com.ademir.moview.data.models.Comment
@@ -75,7 +75,7 @@ class CommentsActivity : AppCompatActivity() {
 
     }
 
-    class CommentsPagerAdapter(val context: Context, val movieId: Int, manager: FragmentManager) : FragmentStatePagerAdapter(manager) {
+    class CommentsPagerAdapter(val context: Context, val movieId: Int, manager: androidx.fragment.app.FragmentManager) : androidx.fragment.app.FragmentStatePagerAdapter(manager) {
 
         companion object {
             val ALL_COMMENTS = 0
@@ -84,7 +84,7 @@ class CommentsActivity : AppCompatActivity() {
 
         private lateinit var allCommentsFragment: CommentsFragment
 
-        override fun getItem(position: Int): Fragment {
+        override fun getItem(position: Int): androidx.fragment.app.Fragment {
             return when (position) {
                 ALL_COMMENTS -> {
                     allCommentsFragment = CommentsFragment.newInstance(movieId, ALL_COMMENTS)

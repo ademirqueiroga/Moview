@@ -5,9 +5,9 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.provider.MediaStore
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentStatePagerAdapter
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentStatePagerAdapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,7 +26,7 @@ import kotlinx.android.synthetic.main.profile_details.*
 import javax.inject.Inject
 
 
-class ProfileFragment : Fragment(), ProfileContract.View {
+class ProfileFragment : androidx.fragment.app.Fragment(), ProfileContract.View {
 
     private var user: FirebaseUser? = null
 
@@ -106,9 +106,9 @@ class ProfileFragment : Fragment(), ProfileContract.View {
         startActivity(Intent(context, SignInActivity::class.java))
     }
 
-    class ProfileViewPagerAdapter(manager: FragmentManager) : FragmentStatePagerAdapter(manager) {
+    class ProfileViewPagerAdapter(manager: androidx.fragment.app.FragmentManager) : androidx.fragment.app.FragmentStatePagerAdapter(manager) {
 
-        override fun getItem(position: Int): Fragment {
+        override fun getItem(position: Int): androidx.fragment.app.Fragment {
             return when (position) {
                 0 -> FeedFragment.newInstance(FeedFragment.USER_TIMELINE)
                 1 -> CatalogFragment.newInstance(CatalogFragment.WATCHLIST)
