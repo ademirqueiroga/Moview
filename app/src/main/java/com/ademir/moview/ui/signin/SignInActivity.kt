@@ -34,7 +34,11 @@ class SignInActivity : AppCompatActivity() {
                     CODE_SIGNIN_FACEBOOK
             )
         }
-
+        adasd
+        asd
+        as
+                asd
+        asd
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
